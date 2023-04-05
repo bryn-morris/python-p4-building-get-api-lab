@@ -27,8 +27,12 @@ class TestApp:
 
             response = app.test_client().get('/bakeries')
             data = json.loads(response.data.decode())
+            print('########################################################')
+            print(type(data))
             assert(type(data) == list)
             for record in data:
+                print('########################################################')
+                print(type(data))
                 assert(type(record) == dict)
                 assert(record['id'])
                 assert(record['name'])
